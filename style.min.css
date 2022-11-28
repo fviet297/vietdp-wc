@@ -1677,8 +1677,10 @@ strong {
 
 .box {
     margin-bottom: 30px;
-    position: relative;
-    z-index: 4
+    position: absolute;
+    top: 716px;
+    left: 444px;
+    z-index: 4;
 }
 
 .box .box-header {
@@ -5870,8 +5872,8 @@ span.xbadge {
 
 @media screen and (max-width:1720px) {
     .mmo-inner.size-160x800 {
-        width: 120px;
-        height: 600px
+        width: 1000px;
+        height: 550px
     }
 
     .mmo-fixside.to-left {
@@ -5892,7 +5894,7 @@ span.xbadge {
 @media screen and (max-height:800px) {
     .mmo-inner.size-160x800 {
         width: 120px;
-        height: 600px
+        height: 1000px
     }
 
     .mmo-fixside.to-left {
@@ -7140,7 +7142,23 @@ span.xbadge {
         width: calc(50% - 20px)
     }
 }
+.video-js .vjs-tech {
+    position: absolute;
+    top: -1px;
+    left: -11px;
+    width: 1000px;
+    height: 550px;
+}
 
+
+.video-js[tabindex="-1"] {
+    outline: none;
+    position: absolute;
+    top: 62px;
+    left: 440px;
+    width: 977px;
+    height: 548px;
+}
 @media screen and (max-width:989px) {
     .match_list-grid .item {
         width: calc(50% - 15px)
