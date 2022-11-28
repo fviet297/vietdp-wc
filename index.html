@@ -4,12 +4,35 @@
 <script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
+window['CboxReady'] = function (Cbox) {
+  Cbox('button', '5-939549-j7YCxM');
+}
+</script>
+<script src="https://static.cbox.ws/embed/2.js" async></script> 
+
+</body>
+</html>
+<header>
+<link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
+<script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+<script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
 let arr = [
-    { name:"VTV1", value:"https://vips-livecdn.fptplay.net/hda1/vtv1hd_vhls.smil/chunklist_b5000000.m3u8"},
-    { name:"VTV2", value:"https://vips-livecdn.fptplay.net/hda1/vtv2_vhls.smil/chunklist_b5000000.m3u8"},
-    { name:"VTV3", value:"https://vips-livecdn.fptplay.net/hda1/vtv3hd_vhls.smil/chunklist_b5000000.m3u8"},
-    { name:"VTV5", value:"https://drfamaga5qliv.vcdn.cloud/vtv05/vtv05@1080p.m3u8"},
-    { name:"VTV6", value:"https://vips-livecdn.fptplay.net/hda1/vtv6hd_vhls.smil/chunklist_b5000000.m3u8"}
+
+    { name:"VTV11080p", value:"https://vips-livecdn.fptplay.net/hda1/vtv1hd_vhls.smil/chunklist_b5000000.m3u8"},
+    { name:"VTV21080p", value:"https://vips-livecdn.fptplay.net/hda1/vtv2_vhls.smil/chunklist_b5000000.m3u8"},
+    { name:"VTV31080p", value:"https://vips-livecdn.fptplay.net/hda1/vtv3hd_vhls.smil/chunklist_b5000000.m3u8"},
+    { name:"VTV51080p", value:"https://vips-livecdn.fptplay.net/hda2/vtv5hd_vhls.smil/chunklist_b5000000.m3u8"},
+    { name:"VTV61080p", value:"https://vips-livecdn.fptplay.net/hda1/vtv6hd_vhls.smil/chunklist_b5000000.m3u8"},
+   { name:"VTV1720p", value:"https://vips-livecdn.fptplay.net/hda1/vtv1hd_vhls.smil/chunklist_b2500000.m3u8"},
+    { name:"VTV2720p", value:"https://vips-livecdn.fptplay.net/hda1/vtv2_vhls.smil/chunklist_b2500000.m3u8"},
+    { name:"VTV3720p", value:"https://vips-livecdn.fptplay.net/hda1/vtv3hd_vhls.smil/chunklist_b2500000.m3u8"},
+    { name:"VTV5720p", value:"https://vips-livecdn.fptplay.net/hda2/vtv5hd_vhls.smil/chunklist_b2500000.m3u8"},
+    { name:"VTV6720p", value:"https://vips-livecdn.fptplay.net/hda1/vtv6hd_vhls.smil/chunklist_b2500000.m3u8"},
+  { name:"cakhiativi", value:"https://cdnorigin2.teamfl.live/sky88/ff747bd7-0f6f-4da6-930f-11b6116de325720p-playlist.m3u8"},
 ];
 
 function parse_query_string(query) {
@@ -44,7 +67,7 @@ $(function() {
 	var query = window.location.search.substring(1);
 	var qs = parse_query_string(query);
 	<!-- console.log("qs: " + qs); -->
-	var cn = 'VTV6';
+	var cn = 'VTV61080p';
 	if(qs.hasOwnProperty('channel')) {
 		<!-- console.log("channel: " + qs.channel); -->
 		cn = qs.channel;
@@ -62,18 +85,30 @@ $(function() {
 </header>
 <body>
 <center id="maintv">
-<video id='tvplay' class="video-js" width="600" height="450" controls autoplay muted>
+<video id='tvplay' class="video-js" width="1000" height="550" controls autoplay muted>
 <source id='tvsource' type="application/x-mpegURL">
 </video>
 </center>
 <p align="center">Chọn kênh: 
 <select id='selectChannel'>
-    <option value="VTV1">VTV1</option>
-    <option value="VTV2">VTV2</option>
-    <option value="VTV3">VTV3</option>
-    <option value="VTV5">VTV5</option>
-    <option value="VTV6">VTV6</option>
-</select>
+    <option style="font-size:20px" value="VTV11080p">VTV1 1080p</option>
+<option style="font-size:20px" value="VTV21080p ">VTV2 1080p</option>
+  <option style="font-size:20px" style="font-size:20px" value="VTV31080p ">VTV3 1080p </option>
+   <option style="font-size:20px" value="VTV51080p">VTV5 1080p</option>
+    <option style="font-size:20px" value="VTV61080p">VTV6 1080p</option>
+<option style="font-size:20px" value="VTV1720p">VTV1 720p</option>
+<option style="font-size:20px" value="VTV2720p ">VTV2 720p</option>
+  <option style="font-size:20px" value="VTV3720p ">VTV3 720p </option>
+   <option style="font-size:20px" value="VTV5720p">VTV5 720p </option>
+<option style="font-size:20px" value="VTV6720p">VTV6 720p</option>
+   <option style="font-size:20px" value="cakhiativi">Cà Khịa TV </option>
+</select><br
+<script type="text/javascript" src="//widget.supercounters.com/ssl/online_i.js"></script><script type="text/javascript">sc_online_i(1650347,"ffffff","e61c1c");</script><br><noscript><a href="https://www.supercounters.com/">free online counter</a></noscript>
+
+
+<!-- END: Powered by Supercounters.com -->
+<script type="text/javascript" src="https://www.counters-free.net/count/bod8"></script><br>
+ <a href='https://drweiglundpartner.de/'>maximale Pflegeleistung</a> <script type='text/javascript' src='https://www.whomania.com/ctr?id=f258ff29d81f53ce860cace08177fc9a91d5a20c'></script>
 </p>
 <div style="position: fixed; left: 50%; bottom: 10px; transform: translate(-50%, -50%); margin: 0 auto;">
 </div>
