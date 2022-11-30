@@ -7142,7 +7142,13 @@ span.xbadge {
         width: calc(50% - 20px)
     }
 }
-
+.video-js .vjs-tech {
+    position: absolute;
+    top: -1px;
+    left: -11px;
+    width: 1000px;
+    height: 550px;
+}
 
 
 .video-js[tabindex="-1"] {
@@ -7150,7 +7156,7 @@ span.xbadge {
     position: absolute;
     top: 62px;
     left: 440px;
-    width: 973px;
+    width: 977px;
     height: 548px;
 }
 @media screen and (max-width:989px) {
