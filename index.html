@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image with Overlay Text</title>
     <style>
-    body {
+        body {
         margin: 0;
         font-family: FontsFree-Net-Rama-Gothic-E-W01, Regular;
     }
@@ -158,18 +158,29 @@
         <input type="file" id="imageUpload" accept="image/*">
     </div>
     <!--  -->
+    <!-- Phần nhập ngày, giờ, địa điểm -->
+    <div class="input-container">
+        <label for="timeInput">Giờ (HH:MM):</label>
+        <input type="text" id="timeInput" placeholder="Ví dụ: 16:40" value="16:40">
+        <label for="dateInput">Ngày (DD/MM/YYYY):</label>
+        <input type="text" id="dateInput" placeholder="Ví dụ: 21/03/2025" value="21/03/2025">
+        <label for="dateInput1">Thứ: </label>
+        <input type="text" id="dateInput1" placeholder="Ví dụ:Th 6" value="Th 6">
+        <label for="locationInput">Địa điểm:</label>
+        <input type="text" id="locationInput" placeholder="Ví dụ: ĐI Bùi Tá Hán, Khuê Mỹ, Ngũ Hành Sơn, Đà Nẵng" value="ĐI Bùi Tá Hán, Khuê Mỹ, Ngũ Hành Sơn, Đà Nẵng">
+    </div>
     <div class="container">
         <img id="previewImage" alt="Background Image" class="background-image">
         <div class="logo">
             <img src="c155b49e-e828-405f-8e76-96b58b79c58d.jpg" alt="logo" class="logo">
         </div>
         <div class="overlay-text time">
-            <p class="time-large">07:40</p>
-            <p class="time-small">22/13/2026</p>
+            <p class="time-large" id="timeDisplay"></p>
+            <p class="time-small" id="dateDisplay"></p>
             <p class="time-small1">|</p>
-            <p class="time-small2">Th 6</p>
+            <p class="time-small2" id="dateDisplay1"></p>
         </div>
-        <div class="overlay-text location">
+        <div class="overlay-text location" id="locationDisplay">
             <p>151 Bùi Tá Hán, Khuê Mỹ, Ngũ Hành Sơn,<br>
                 Đà Nẵng</p>
         </div>
@@ -180,29 +191,55 @@
             <p class="authenticity">100% Chân thực</p>
         </div>
     </div>
-
     <!--  -->
     <script>
-        // Lấy phần tử input và hình ảnh preview
-        const imageUpload = document.getElementById('imageUpload');
-        const previewImage = document.getElementById('previewImage');
+    // Lấy phần tử input và hình ảnh preview
+    const imageUpload = document.getElementById('imageUpload');
+    const previewImage = document.getElementById('previewImage');
 
-        // Thêm sự kiện khi người dùng chọn hình ảnh
-        imageUpload.addEventListener('change', function(event) {
-            const file = event.target.files[0]; // Lấy file đầu tiên từ input
-            if (file) {
-                const reader = new FileReader(); // Tạo đối tượng FileReader để đọc file
+    // Lấy phần tử input và phần tử hiển thị ngày, giờ, địa điểm
+    const timeInput = document.getElementById('timeInput');
+    const dateInput = document.getElementById('dateInput');
+    const locationInput = document.getElementById('locationInput');
+    const timeDisplay = document.getElementById('timeDisplay');
+    const dateDisplay = document.getElementById('dateDisplay');
+    const dateDisplay1 = document.getElementById('dateDisplay1');
 
-                // Khi file được đọc xong, hiển thị hình ảnh
-                reader.onload = function(e) {
-                    previewImage.src = e.target.result; // Gán dữ liệu hình ảnh vào src
-                    previewImage.style.display = 'block'; // Hiển thị hình ảnh
-                };
+    const locationDisplay = document.getElementById('locationDisplay');
 
-                // Đọc file dưới dạng URL dữ liệu (base64)
-                reader.readAsDataURL(file);
-            }
-        });
+    // Thêm sự kiện khi người dùng chọn hình ảnh
+    imageUpload.addEventListener('change', function(event) {
+        const file = event.target.files[0]; // Lấy file đầu tiên từ input
+        if (file) {
+            const reader = new FileReader(); // Tạo đối tượng FileReader để đọc file
+
+            // Khi file được đọc xong, hiển thị hình ảnh
+            reader.onload = function(e) {
+                previewImage.src = e.target.result; // Gán dữ liệu hình ảnh vào src
+                previewImage.style.display = 'block'; // Hiển thị hình ảnh
+            };
+
+            // Đọc file dưới dạng URL dữ liệu (base64)
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Xử lý cập nhật ngày, giờ, địa điểm
+    timeInput.addEventListener('input', function() {
+        timeDisplay.textContent = timeInput.value || '16:40';
+    });
+
+    dateInput.addEventListener('input', function() {
+        dateDisplay.textContent = dateInput.value || '21/03/2025 | Th 6';
+    });
+
+    dateInput1.addEventListener('input', function() {
+        dateDisplay1.textContent = dateInput1.value || '21/03/2025 | Th 6';
+    });
+
+    locationInput.addEventListener('input', function() {
+        locationDisplay.textContent = locationInput.value || 'ĐI Bùi Tá Hán, Khuê Mỹ, Ngũ Hành Sơn, Đà Nẵng';
+    });
     </script>
 </body>
 
