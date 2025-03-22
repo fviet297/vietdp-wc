@@ -1,66 +1,209 @@
 <!DOCTYPE html>
-<html lang=vi>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-		<link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet" />
-		<link href="style.min.css" rel="stylesheet" />
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-		<script src="https://unpkg.com/video.js/dist/video.js"></script>
-		<script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
-		<script src="script.js"></script>
-	</head>
-	<body>
-    <br>
-    <br>
-		<div id="mainPlayer" class="d-flex justify-content-center">
-			<video-js id='tvplay' class="vjs-default-skin" width="1000" height="550" controls autoplay muted/>
-			</div> &nbsp; <div id="functional" class="container text-center">Chọn kênh để xem: <select id='selectChannel' onchange="redirect();">
-				<option value="VTV1">VTV1</option>
-				<option value="VTV2">VTV2</option>
-				<option value="VTV3">VTV3</option>
-				<option value="VTV5">VTV5</option>
-				<option value="VTV6">VTV6</option>
-			</select> &emsp; Chất lượng: <input type="radio" id="FHD" name="qlt" value="FHD" checked onchange="redirect();" />
-			<label for="FHD">Full HD</label>
-			<input type="radio" id="HD" name="qlt" value="HD" onchange="redirect();" />
-			<label for="HD">HD</label><br>
-      <!-- BEGIN: Powered by Supercounters.com -->
-<!-- <script type="text/javascript" src="//widget.supercounters.com/ssl/online_i.js"></script><script type="text/javascript">sc_online_i(1650771,"ffffff","e61c1c");</script><br> -->
-<!-- END: Powered by Supercounters.com -->
+<html lang="en">
 
- <script type="text/javascript" src="https://www.counters-free.net/count/bqal"></script>
-		</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Overlay Text</title>
+    <style>
+    body {
+        margin: 0;
+        font-family: FontsFree-Net-Rama-Gothic-E-W01, Regular;
+    }
 
-		&nbsp;
-		<div class="container">
-			<div class="box box-grid mb-0">
-				<div class="box-header w-social">
-					<h2 class="headlineA1">World Cup Hôm Nay</h2>
-				</div>
-				<div class="clearfix"></div>
-				&nbsp;
-				<div class="box-content">
-					<div class="xitems xitems-grid" id="mToday" />
-				</div>
-			</div>
-			<div class="box box-grid mb-0">
-				
-				<div class="clearfix"></div>
+    .container {
+        position: relative;
+        width: 600px;
+        /* Adjust based on your image size */
+        height: 400px;
+        /* Adjust based on your image size */
+    }
 
-			</div>
-			&nbsp;
-			&nbsp;
-			&nbsp;
-			
-			<script>
-window['CboxReady'] = function (Cbox) {
-  Cbox('button', '5-939549-j7YCxM');
-}
-</script>
-			<script src="https://static.cbox.ws/embed/2.js" async></script>
-		</body>
-	</html>	
+    .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .overlay-text {
+        position: absolute;
+        color: white;
+    }
+
+    .top-left {
+        top: 10px;
+        left: 10px;
+    }
+
+    .milwa {
+        color: #FF0000;
+        font-size: 30px;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .since {
+        color: #000000;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .time {
+        top: 60px;
+        left: 10px;
+    }
+
+    .time-large {
+        font-family: 'RamaGothicEW01-Regular', sans-serif;
+        font-size: 40px;
+        font-weight: Thin;
+        margin: 0;
+        position: absolute;
+        top: 157px;
+    }
+
+    .time-small {
+        font-size: 13px;
+        margin: 0;
+        top: 163px;
+        position: absolute;
+        left: 71px;
+        font-family: 'NimbusSansDConRegular', sans-serif;
+        font-weight: 400;
+        letter-spacing: 0px;
+        transform: scaleX(0.8) scaleY(1.2);
+    }
+
+    .time-small1 {
+        font-size: 33px;
+        margin: 0;
+        color: #efa00b;
+        position: absolute;
+        top: 157px;
+        left: 67px;
+    }
+
+    .time-small2 {
+        font-size: 13px;
+        top: 181px;
+        margin: 0;
+        position: absolute;
+        left: 76px;
+        font-family: 'NimbusSansDConRegular', sans-serif;
+        font-weight: 400;
+        letter-spacing: 0px;
+        transform: scaleX(0.8) scaleY(1.2);
+        display: flex;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .location {
+        top: 259px;
+        left: -12px;
+        font-size: 13px;
+        margin: 0;
+        position: absolute;
+        font-family: 'NimbusSansDConRegular', sans-serif;
+        font-weight: 400;
+        letter-spacing: 0px;
+        transform: scaleX(0.8) scaleY(1.2);
+        display: flex;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+
+    .bottom-right {
+        bottom: 81px;
+        right: 10px;
+        text-align: right;
+    }
+
+    .timemark {
+        font-family: 'KatarineTRIAL-Medium', sans-serif;
+        font-size: 20px;
+        font-weight: thin;
+        margin: 0;
+    }
+
+    .time-part {
+        color: #efb50b;
+    }
+
+    .mark-part {
+        color: #FFFFFF;
+        /* White for "MARK" */
+    }
+
+    .authenticity {
+        font-size: 13px;
+        margin: 0;
+        opacity: 0.5;
+    }
+
+    .logo {
+        margin: 0;
+        position: absolute;
+        top: 87px;
+        left: 5px;
+        height: 42px;
+        width: 67px;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="upload-container">
+        <input type="file" id="imageUpload" accept="image/*">
+    </div>
+    <!--  -->
+    <div class="container">
+        <img id="previewImage" alt="Background Image" class="background-image">
+        <div class="logo">
+            <img src="c155b49e-e828-405f-8e76-96b58b79c58d.jpg" alt="logo" class="logo">
+        </div>
+        <div class="overlay-text time">
+            <p class="time-large">07:40</p>
+            <p class="time-small">22/13/2026</p>
+            <p class="time-small1">|</p>
+            <p class="time-small2">Th 6</p>
+        </div>
+        <div class="overlay-text location">
+            <p>151 Bùi Tá Hán, Khuê Mỹ, Ngũ Hành Sơn,<br>
+                Đà Nẵng</p>
+        </div>
+        <div class="overlay-text bottom-right">
+            <p class="timemark">
+                <span class="time-part">Time</span><span class="mark-part">mark</span>
+            </p>
+            <p class="authenticity">100% Chân thực</p>
+        </div>
+    </div>
+
+    <!--  -->
+    <script>
+        // Lấy phần tử input và hình ảnh preview
+        const imageUpload = document.getElementById('imageUpload');
+        const previewImage = document.getElementById('previewImage');
+
+        // Thêm sự kiện khi người dùng chọn hình ảnh
+        imageUpload.addEventListener('change', function(event) {
+            const file = event.target.files[0]; // Lấy file đầu tiên từ input
+            if (file) {
+                const reader = new FileReader(); // Tạo đối tượng FileReader để đọc file
+
+                // Khi file được đọc xong, hiển thị hình ảnh
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result; // Gán dữ liệu hình ảnh vào src
+                    previewImage.style.display = 'block'; // Hiển thị hình ảnh
+                };
+
+                // Đọc file dưới dạng URL dữ liệu (base64)
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+
+</html>
