@@ -6,6 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image with Overlay Text</title>
     <style>
+        @font-face {
+    font-family: 'Katarine TRIAL';
+    src: url('../fonts/KatarineTRIAL-Light.woff2') format('woff2'),
+        url('../fonts/KatarineTRIAL-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Katarine TRIAL';
+    src: url('../fonts/KatarineTRIAL-LightItalic.woff2') format('woff2'),
+        url('../fonts/KatarineTRIAL-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Katarine TRIAL';
+    src: url('../fonts/KatarineTRIAL-Italic.woff2') format('woff2'),
+        url('../fonts/KatarineTRIAL-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RamaGothicEW01';
+    src: url('../fonts/RamaGothicEW01-Regular.woff2') format('woff2'),
+        url('../fonts/RamaGothicEW01-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Katarine TRIAL';
+    src: url('../fonts/KatarineTRIAL-BoldItalic.woff2') format('woff2'),
+        url('../fonts/KatarineTRIAL-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Katarine TRIAL';
+    src: url('../fonts/KatarineTRIAL-Bold.woff2') format('woff2'),
+        url('../fonts/KatarineTRIAL-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Katarine TRIAL';
+    src: url('../fonts/KatarineTRIAL-SemiBold.woff2') format('woff2'),
+        url('../fonts/KatarineTRIAL-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Katarine TRIAL';
+    src: url('../fonts/KatarineTRIAL-Medium.woff2') format('woff2'),
+        url('../fonts/KatarineTRIAL-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Katarine TRIAL';
+    src: url('../fonts/KatarineTRIAL-SemiBoldItalic.woff2') format('woff2'),
+        url('../fonts/KatarineTRIAL-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NimbusSanDCon';
+    src: url('../fonts/NimbusSanD-ReguCond.woff2') format('woff2'),
+        url('../fonts/NimbusSanD-ReguCond.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Katarine TRIAL';
+    src: url('../fonts/KatarineTRIAL-MediumItalic.woff2') format('woff2'),
+        url('../fonts/KatarineTRIAL-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Katarine TRIAL';
+    src: url('../fonts/KatarineTRIAL-Regular.woff2') format('woff2'),
+        url('../fonts/KatarineTRIAL-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Isra';
+    src: url('../fonts/Isra-Regular.woff2') format('woff2'),
+        url('../fonts/Isra-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -129,7 +247,7 @@
             margin: 0;
             top: 16.8125rem; /* 269px */
             position: absolute;
-            left: 7rem; /* 71px */
+            left: 4.4375rem; /* 71px */
             font-family: 'NimbusSansDConRegular', sans-serif;
             font-weight: 400;
             letter-spacing: 0;
@@ -141,14 +259,14 @@
             color: #efa00b;
             position: absolute;
             top: 16.5rem; /* 264px */
-            left: 6.5rem; /* 67px */
+            left: 4.1875rem; /* 67px */
         }
         .time-small2 {
             font-size: 0.8125rem; /* 13px */
             top: 18rem; /* 288px */
             margin: 0;
             position: absolute;
-            left: 7rem; /* 76px */
+            left: 4.75rem; /* 76px */
             font-family: 'NimbusSansDConRegular', sans-serif;
             font-weight: 400;
             letter-spacing: 0;
@@ -219,18 +337,18 @@
             .time-small {
                 font-size: 0.5rem; /* 12px */
                 top: 12.25rem;
-                left: 5.5rem;
+                left: 3.5rem;
             }
             .time-small1 {
                 font-size: 1.5rem; /* 24px */
                 top: 12rem;
-                left: 5.25rem;
+                left: 3.25rem;
                 transform: scaleX(0.8) scaleY(1.2);
             }
             .time-small2 {
                 font-size: 0.5rem; /* 12px */
                 top: 13.3rem;
-                left: 5.75rem;
+                left: 3.75rem;
             }
             .location {
                 font-size: 0.5rem;
