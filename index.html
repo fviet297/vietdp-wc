@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image with Overlay Text</title>
     <style>
-@font-face {
+        @font-face {
     font-family: 'RamaGothicEW01';
     src: url('fonts/RamaGothicEW01-Regular.woff2') format('woff2'),
         url('fonts/RamaGothicEW01-Regular.woff') format('woff');
@@ -146,57 +146,62 @@
         }
         .time-large {
             font-family: 'RamaGothicEW01', sans-serif;
-            font-size: 2.5rem; /* 40px */
-            font-weight: 100;
-            margin: 0;
-            position: absolute;
-            top: 16.5rem; /* 264px */
+    font-size: 4.3rem;
+    font-weight: 100;
+    margin: 0;
+    position: absolute;
+    top: 19.5rem;
         }
         .time-small {
-            font-size: 0.8125rem; /* 13px */
-            margin: 0;
-            top: 16.8125rem; /* 269px */
-            position: absolute;
-            left: 4.4375rem; /* 71px */
-            font-family: 'NimbusSanDCon', sans-serif;
-            font-weight: 400;
-            letter-spacing: 0;
-            transform: scaleX(0.8) scaleY(1.2);
+            font-size: 1.1rem;
+    margin: 0;
+    top: 20.2rem;
+    position: absolute;
+    left: 6.5rem;
+    font-family: 'NimbusSanDCon', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+    transform: scaleX(0.8) scaleY(1.2);
+    flex-wrap: nowrap;
+    white-space: nowrap;
         }
         .time-small1 {
-            font-size: 2.0625rem; /* 33px */
-            margin: 0;
-            color: #efa00b;
-            position: absolute;
-            top: 16.5rem; /* 264px */
-            left: 4.1875rem; /* 67px */
+           font-size: 2.0625rem;
+    margin: 0;
+    color: #efa00b;
+    position: absolute;
+    top: 20.4rem;
+    left: 6.1875rem;
+    transform: scaleX(0.8) scaleY(1.69);
         }
         .time-small2 {
-            font-size: 0.8125rem; /* 13px */
-            top: 18rem; /* 288px */
-            margin: 0;
-            position: absolute;
-            left: 4.75rem; /* 76px */
-            font-family: 'NimbusSanDCon', sans-serif;
-            font-weight: 400;
-            letter-spacing: 0;
-            transform: scaleX(0.8) scaleY(1.2);
-            display: flex;
-            flex-wrap: nowrap;
-            white-space: nowrap;
+            font-size: 1.3rem;
+    top: 22rem;
+    margin: 0;
+    position: absolute;
+    left: 7rem;
+    font-family: 'NimbusSanDCon', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+    transform: scaleX(0.8) scaleY(1.2);
+    display: flex
+;
+    flex-wrap: nowrap;
+    white-space: nowrap;
         }
         .location {
-            top: 19.5625rem; /* 313px */
-            left: -1.75rem; /* -28px */
-            font-size: 0.8125rem; /* 13px */
-            margin: 0;
-            position: absolute;
-            font-family: 'NimbusSanDCon', sans-serif;
-            font-weight: 400;
-            transform: scaleX(0.8) scaleY(1.2);
-            display: flex;
-            flex-wrap: nowrap;
-            white-space: nowrap;
+            top: 24.2rem;
+    left: -1.75rem;
+    font-size: 0.8rem;
+    margin: 0;
+    position: absolute;
+/*    font-family: 'NimbusSanDCon', sans-serif;*/
+    font-weight: 400;
+    transform: scaleX(0.8) scaleY(1.2);
+    display: flex
+;
+    flex-wrap: nowrap;
+    white-space: nowrap;
         }
         .bottom-right {
             bottom: 0.3125rem; /* 5px */
@@ -205,9 +210,10 @@
         }
         .timemark {
             font-family: 'KatarineTRIAL-Medium', sans-serif;
-            font-size: 1.25rem; /* 20px */
-            font-weight: 100;
-            margin: 0;
+    font-size: 1rem;
+    font-weight: 100;
+        margin: 0px;
+
         }
         .time-part {
             color: #efb50b;
@@ -216,18 +222,18 @@
             color: #FFFFFF;
         }
         .authenticity {
-            font-size: 0.8125rem; /* 13px */
+                font-size: 0.5rem;
             margin: 0;
             opacity: 0.5;
         }
         .logo {
             margin: 0;
-            position: absolute;
-            top: 8.8125rem; /* 141px */
-            left: 0.25rem; /* 4px */
-            height: 2.625rem; /* 42px */
-            width: 4.1875rem; /* 67px */
-            border-radius: 0.3125rem; /* 5px */
+    position: absolute;
+    top: 9.6rem;
+    left: 0.4rem;
+    height: 3.625rem;
+    width: 6.1rem;
+    border-radius: 0.3125rem;
         }
 
         /* Media Queries cho màn hình nhỏ */
@@ -338,7 +344,7 @@
         <!-- Phần hiển thị hình ảnh và văn bản phủ lên -->
         <div class="container">
             <img id="previewImage" alt="Background Image" class="background-image">
-           <!-- <img src="C:\Users\fviet\Desktop\7b9fc26d-e273-4853-826a-b551109339ec.jpg" alt="Background Image" class="background-image"> -->
+            <!-- <img src="C:\Users\fviet\Desktop\7b9fc26d-e273-4853-826a-b551109339ec.jpg" alt="Background Image" class="background-image"> -->
             <div class="logo">
                 <img src="c155b49e-e828-405f-8e76-96b58b79c58d.jpg" alt="logo" class="logo">
             </div>
@@ -350,10 +356,10 @@
                 <p class="location" id="locationDisplay">151 Bùi Tá Hán, Khuê Mỹ, Ngũ Hành Sơn,Đà Nẵng</p>
             </div>
             <div class="overlay-text bottom-right">
-                <p class="timemark">
-                    <span class="time-part">Time</span><span class="mark-part">mark</span>
-                </p>
-                <p class="authenticity">100% Chân thực</p>
+            <p class="timemark" style="top: 13.5rem;">
+                <span class="time-part" style="top: 13.5rem;">Time</span><span class="mark-part" style="top: 13.5rem;">mark</span>
+            </p>
+            <p class="authenticity">100% Chân thực</p>
             </div>
         </div>
     </div>
