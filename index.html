@@ -8,66 +8,69 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif; /* Thay thế font nếu không có */
-            background-color: #f4f4f9; /* Màu nền nhẹ */
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center; /* Căn giữa trên mọi thiết bị */
             min-height: 100vh;
-            padding: 20px;
+            padding: 1rem; /* Sử dụng rem thay vì px */
         }
 
         /* Định dạng container chính */
         .main-container {
-            width: 100%;
-            max-width: 700px;
+            width: 90vw; /* Sử dụng đơn vị tương đối */
+            max-width: 43.75rem; /* Tương đương 700px */
             background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            border-radius: 0.9375rem; /* 15px */
+            box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1); /* 4px 10px */
+            padding: 1.25rem; /* 20px */
+            box-sizing: border-box;
         }
 
         /* Định dạng container chứa các ô input */
         .input-container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 0.9375rem; /* 15px */
+            margin-bottom: 1.25rem; /* 20px */
         }
         .input-container label {
-            font-size: 14px;
+            font-size: 0.875rem; /* 14px */
             font-weight: 600;
             color: #333;
         }
         .input-container input {
-            padding: 10px;
+            padding: 0.625rem; /* 10px */
             border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
+            border-radius: 0.3125rem; /* 5px */
+            font-size: 0.875rem; /* 14px */
             transition: border-color 0.3s, box-shadow 0.3s;
+            width: 100%; /* Đảm bảo input co giãn */
+            box-sizing: border-box;
         }
         .input-container input:focus {
             outline: none;
             border-color: #4CAF50;
-            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+            box-shadow: 0 0 0.3125rem rgba(76, 175, 80, 0.3); /* 5px */
         }
 
         /* Định dạng upload container */
         .upload-container {
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem; /* 20px */
             text-align: center;
         }
         .upload-container input[type="file"] {
-            display: none; /* Ẩn input file mặc định */
+            display: none;
         }
         .upload-container label {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 0.625rem 1.25rem; /* 10px 20px */
             background-color: #4CAF50;
             color: white;
-            border-radius: 5px;
+            border-radius: 0.3125rem; /* 5px */
             cursor: pointer;
-            font-size: 14px;
+            font-size: 0.875rem; /* 14px */
             font-weight: 600;
             transition: background-color 0.3s;
         }
@@ -78,153 +81,211 @@
         /* Định dạng container chứa hình ảnh và văn bản */
         .container {
             position: relative;
-            width: 600px;
-            height: 400px;
+            width: 100%; /* Co giãn linh hoạt */
+            max-width: 37.5rem; /* 600px */
+            height: 25rem; /* 400px */
             overflow: hidden;
-/*            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);*/
             transition: transform 0.3s;
         }
-        .container {
-        position: relative;
-        width: 600px;
-        /* Adjust based on your image size */
-        height: 400px;
-        /* Adjust based on your image size */
-    }
+        .background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .overlay-text {
+            position: absolute;
+            color: white;
+        }
 
-    .background-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+        .top-left {
+            top: 0.625rem; /* 10px */
+            left: 0.625rem; /* 10px */
+        }
+        .milwa {
+            color: #FF0000;
+            font-size: 1.875rem; /* 30px */
+            font-weight: bold;
+            margin: 0;
+        }
+        .since {
+            color: #000000;
+            font-size: 0.875rem; /* 14px */
+            margin: 0;
+        }
+        .time {
+            top: 3.75rem; /* 60px */
+            left: 0.625rem; /* 10px */
+        }
+        .time-large {
+            font-family: 'RamaGothicEW01-Regular', sans-serif;
+            font-size: 2.5rem; /* 40px */
+            font-weight: 100;
+            margin: 0;
+            position: absolute;
+            top: 16.5rem; /* 264px */
+        }
+        .time-small {
+            font-size: 0.8125rem; /* 13px */
+            margin: 0;
+            top: 16.8125rem; /* 269px */
+            position: absolute;
+            left: 4.4375rem; /* 71px */
+            font-family: 'NimbusSansDConRegular', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0;
+            transform: scaleX(0.8) scaleY(1.2);
+        }
+        .time-small1 {
+            font-size: 2.0625rem; /* 33px */
+            margin: 0;
+            color: #efa00b;
+            position: absolute;
+            top: 16.5rem; /* 264px */
+            left: 4.1875rem; /* 67px */
+        }
+        .time-small2 {
+            font-size: 0.8125rem; /* 13px */
+            top: 18rem; /* 288px */
+            margin: 0;
+            position: absolute;
+            left: 4.75rem; /* 76px */
+            font-family: 'NimbusSansDConRegular', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0;
+            transform: scaleX(0.8) scaleY(1.2);
+            display: flex;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+        .location {
+            top: 19.5625rem; /* 313px */
+            left: -1.75rem; /* -28px */
+            font-size: 0.8125rem; /* 13px */
+            margin: 0;
+            position: absolute;
+            font-family: 'NimbusSansDConRegular', sans-serif;
+            font-weight: 400;
+            transform: scaleX(0.8) scaleY(1.2);
+            display: flex;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+        .bottom-right {
+            bottom: 0.3125rem; /* 5px */
+            right: 0.625rem; /* 10px */
+            text-align: right;
+        }
+        .timemark {
+            font-family: 'KatarineTRIAL-Medium', sans-serif;
+            font-size: 1.25rem; /* 20px */
+            font-weight: 100;
+            margin: 0;
+        }
+        .time-part {
+            color: #efb50b;
+        }
+        .mark-part {
+            color: #FFFFFF;
+        }
+        .authenticity {
+            font-size: 0.8125rem; /* 13px */
+            margin: 0;
+            opacity: 0.5;
+        }
+        .logo {
+            margin: 0;
+            position: absolute;
+            top: 8.8125rem; /* 141px */
+            left: 0.25rem; /* 4px */
+            height: 2.625rem; /* 42px */
+            width: 4.1875rem; /* 67px */
+            border-radius: 0.3125rem; /* 5px */
+        }
 
-    .overlay-text {
-        position: absolute;
-        color: white;
-    }
+        /* Media Queries cho màn hình nhỏ */
+        @media (max-width: 768px) {
+            .main-container {
+                width: 95vw;
+                padding: 0.9375rem; /* 15px */
+            }
+            .container {
+                max-width: 100%;
+                height: 20rem; /* Giảm chiều cao trên màn hình nhỏ */
+            }
+            .time-large {
+                font-size: 2rem; /* 32px */
+                top: 12rem; /* Điều chỉnh vị trí */
+            }
+            .time-small {
+                font-size: 0.5rem; /* 12px */
+                top: 12.25rem;
+                left: 3.5rem;
+            }
+            .time-small1 {
+                font-size: 1.5rem; /* 24px */
+                top: 12rem;
+                left: 3.25rem;
+                transform: scaleX(0.8) scaleY(1.2);
+            }
+            .time-small2 {
+                font-size: 0.5rem; /* 12px */
+                top: 13.3rem;
+                left: 3.75rem;
+            }
+            .location {
+                font-size: 0.5rem;
+        top: 14.5rem;
+        left: -1rem;
+            }
+            .logo {
+                top: 7rem;
+                height: 2rem; /* 32px */
+                width: 3.125rem; /* 50px */
+            }
+            .milwa {
+                font-size: 1.5rem; /* 24px */
+            }
+            .timemark {
+                font-size: 1rem; /* 16px */
+            }
+        }
 
-    .top-left {
-        top: 10px;
-        left: 10px;
-    }
-
-    .milwa {
-        color: #FF0000;
-        font-size: 30px;
-        font-weight: bold;
-        margin: 0;
-    }
-
-    .since {
-        color: #000000;
-        font-size: 14px;
-        margin: 0;
-    }
-
-    .time {
-        top: 60px;
-        left: 10px;
-    }
-
-    .time-large {
-        font-family: 'RamaGothicEW01-Regular', sans-serif;
-        font-size: 40px;
-        font-weight: Thin;
-        margin: 0;
-        position: absolute;
-        top: 264px;
-    }
-
-    .time-small {
-        font-size: 13px;
-        margin: 0;
-        top: 269px;
-        position: absolute;
-        left: 71px;
-        font-family: 'NimbusSansDConRegular', sans-serif;
-        font-weight: 400;
-        letter-spacing: 0px;
-        transform: scaleX(0.8) scaleY(1.2);
-    }
-
-    .time-small1 {
-        font-size: 33px;
-        margin: 0;
-        color: #efa00b;
-        position: absolute;
-        top: 264px;
-        left: 67px;
-    }
-
-    .time-small2 {
-        font-size: 13px;
-        top: 288px;
-        margin: 0;
-        position: absolute;
-        left: 76px;
-        font-family: 'NimbusSansDConRegular', sans-serif;
-        font-weight: 400;
-        letter-spacing: 0px;
-        transform: scaleX(0.8) scaleY(1.2);
-        display: flex;
-        flex-wrap: nowrap;
-        white-space: nowrap;
-    }
-
-    .location {
-   top: 313px;
-    left: -28px;
-    font-size: 13px;
-    margin: 0;
-    position: absolute;
-    font-family: 'NimbusSansDConRegular', sans-serif;
-    font-weight: 400;
-    transform: scaleX(0.8) scaleY(1.2);
-    display: flex;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    margin-left: 0;
-
-    }
-
-    .bottom-right {
-        bottom: 5px;
-        right: 10px;
-        text-align: right;
-    }
-
-    .timemark {
-        font-family: 'KatarineTRIAL-Medium', sans-serif;
-        font-size: 20px;
-        font-weight: thin;
-        margin: 0;
-    }
-
-    .time-part {
-        color: #efb50b;
-    }
-
-    .mark-part {
-        color: #FFFFFF;
-        /* White for "MARK" */
-    }
-
-    .authenticity {
-        font-size: 13px;
-        margin: 0;
-        opacity: 0.5;
-    }
-
-    .logo {
-        margin: 0;
-    position: absolute;
-    top: 141px;
-    left: 4px;
-    height: 42px;
-    width: 67px;
-    border-radius: 5px;
-
-    }
+        @media (max-width: 480px) {
+            .input-container label,
+            .input-container input,
+            .upload-container label {
+                font-size: 0.75rem; /* 12px */
+            }
+            .container {
+                height: 15rem; /* Giảm thêm trên điện thoại nhỏ */
+            }
+            .time-large {
+                font-size: 1.5rem; /* 24px */
+                top: 12rem;
+            }
+            .time-small {
+                top: 9.75rem;
+                left: 2.5rem;
+            }
+            .time-small1 {
+                font-size: 1.25rem; /* 20px */
+                top: 9.5rem;
+                left: 2.25rem;
+            }
+            .time-small2 {
+                top: 10.5rem;
+                left: 2.75rem;
+            }
+            .location {
+                top: 11.5rem;
+                left: -0.5rem;
+            }
+            .logo {
+                top: 5rem;
+                height: 1.5rem; /* 24px */
+                width: 2.5rem; /* 40px */
+            }
+        }
     </style>
 </head>
 
@@ -259,9 +320,6 @@
                 <p class="time-small2" id="dateDisplay1">Th 6</p>
                 <p class="location" id="locationDisplay">151 Bùi Tá Hán, Khuê Mỹ, Ngũ Hành Sơn,Đà Nẵng</p>
             </div>
-            <!--             <div class="overlay-text location" id="locationDisplay">
-                <p>ĐI Bùi Tá Hán, Khuê Mỹ, Ngũ Hành Sơn,<br>Đà Nẵng</p>
-            </div> -->
             <div class="overlay-text bottom-right">
                 <p class="timemark">
                     <span class="time-part">Time</span><span class="mark-part">mark</span>
@@ -272,11 +330,8 @@
     </div>
     <!-- JavaScript để xử lý upload và cập nhật ngày giờ địa điểm -->
     <script>
-    // Lấy phần tử input và hình ảnh preview
     const imageUpload = document.getElementById('imageUpload');
     const previewImage = document.getElementById('previewImage');
-
-    // Lấy phần tử input và phần tử hiển thị ngày, giờ, địa điểm
     const timeInput = document.getElementById('timeInput');
     const dateInput = document.getElementById('dateInput');
     const dateInput1 = document.getElementById('dateInput1');
@@ -286,7 +341,6 @@
     const dateDisplay1 = document.getElementById('dateDisplay1');
     const locationDisplay = document.getElementById('locationDisplay');
 
-    // Xử lý upload hình ảnh
     imageUpload.addEventListener('change', function(event) {
         const file = event.target.files[0];
         if (file) {
@@ -299,7 +353,6 @@
         }
     });
 
-    // Xử lý cập nhật ngày, giờ, địa điểm
     timeInput.addEventListener('input', function() {
         timeDisplay.textContent = timeInput.value || '16:40';
     });
